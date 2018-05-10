@@ -98,3 +98,10 @@ test('It should slice the string if the value is longer than the pattern', t => 
 
   t.is(result, '12.345.678');
 });
+
+test('It should work with curried value', t => {
+  const formatToCPF = formatStringByPattern('000.000.000-00');
+  const result = formatToCPF(76316204230);
+
+  t.is(result, '763.162.042-30');
+});

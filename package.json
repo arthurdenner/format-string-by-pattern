@@ -13,6 +13,8 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run test && microbundle -o dist",
+    "prepublish": "git push && git push --tags",
+    "preversion": "npm run build",
     "test": "xo && nyc ava",
     "test:watch": "npm test -- --watch"
   },

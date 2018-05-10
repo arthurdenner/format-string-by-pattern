@@ -62,4 +62,7 @@ function formatStringByPattern(pattern, value) {
   return afterReduce.value.slice(0, pattern.length);
 }
 
-module.exports = formatStringByPattern;
+module.exports = (pattern, value) =>
+  value
+    ? formatStringByPattern(pattern, value)
+    : curriedValue => formatStringByPattern(pattern, curriedValue);
