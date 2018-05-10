@@ -22,13 +22,18 @@ formatStringByPattern('YYYY-MM-DD', '20180508');
 
 formatStringByPattern('2018-05-08', '20151217');
 // '2015-12-17'
+
+// It works with curry too
+const someFormat = formatStringByPattern('00.00');
+someFormat(1234);
+// 12.34
 ```
 
 > NOTE: The returned value will be sliced to the size of the pattern.
 
 ## API
 
-### formatStringByPattern(pattern, stringToFormat)
+### formatStringByPattern(pattern, valueToFormat)
 
 Returns a `string`.
 
@@ -38,11 +43,11 @@ Type: `string`
 
 A string where anything that is not a number or letter will be treated as a separator.
 
-#### stringToFormat
+#### valueToFormat
 
-Type: `string`
+Type: `string` or `number`
 
-A string to be formatted.
+A value to be formatted.
 
 ## License
 
