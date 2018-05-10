@@ -1,0 +1,45 @@
+{
+  "name": "format-string-by-pattern",
+  "version": "0.0.0",
+  "description": "A module that formats a string based on a pattern",
+  "main": "dist/format-string-by-pattern.js",
+  "umd:main": "dist/format-string-by-pattern.umd.js",  
+  "module": "dist/format-string-by-pattern.m.js",      
+  "source": "src/format-string-by-pattern.js",
+  "author": {
+    "name": "Arthur Denner",
+    "email": "arthurdenner7@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run test && microbundle -o dist",
+    "test": "xo && nyc ava",
+    "test:watch": "npm test -- --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "format",
+    "string",
+    "pattern"
+  ],
+  "xo": {
+    "prettier": true,
+    "space": true
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.4",
+    "microbundle": "^0.4.4",
+    "nyc": "^11.7.1",
+    "xo": "^0.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arthurdenner/format-string-by-pattern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arthurdenner/format-string-by-pattern/issues"
+  },
+  "homepage": "https://github.com/arthurdenner/format-string-by-pattern#readme"
+}
