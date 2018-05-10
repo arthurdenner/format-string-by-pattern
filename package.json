@@ -1,10 +1,10 @@
 {
   "name": "format-string-by-pattern",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A module that formats a string based on a pattern",
   "main": "dist/format-string-by-pattern.js",
-  "umd:main": "dist/format-string-by-pattern.umd.js",  
-  "module": "dist/format-string-by-pattern.m.js",      
+  "umd:main": "dist/format-string-by-pattern.umd.js",
+  "module": "dist/format-string-by-pattern.m.js",
   "source": "src/format-string-by-pattern.js",
   "author": {
     "name": "Arthur Denner",
