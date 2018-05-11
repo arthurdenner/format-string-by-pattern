@@ -1,4 +1,5 @@
 function formatStringByPattern(pattern, value) {
+  const cleanValue = String(value).replace(/[^\da-zA-Z\n|]/g, '');
   const blockSizes = pattern
     .split(/[^\da-zA-Z\n|]/g)
     .filter(Boolean)
@@ -21,7 +22,7 @@ function formatStringByPattern(pattern, value) {
       },
       {
         result: '',
-        value: String(value),
+        value: cleanValue,
       }
     );
 
@@ -55,7 +56,7 @@ function formatStringByPattern(pattern, value) {
     {
       prevSeparator: '',
       prevSlice: 0,
-      value: String(value),
+      value: cleanValue,
     }
   );
 
