@@ -105,3 +105,17 @@ test('It should work with curried value', t => {
 
   t.is(result, '763.162.042-30');
 });
+
+test('It should return an empty string if no value is provided', t => {
+  const formatToCPF = formatStringByPattern('(999) 999-9999');
+  const result = formatToCPF();
+
+  t.is(result, '');
+});
+
+test('It should return an empty string if the value is empty', t => {
+  const formatToCPF = formatStringByPattern('(999) 999-9999');
+  const result = formatToCPF('');
+
+  t.is(result, '');
+});

@@ -1,4 +1,8 @@
 function formatStringByPattern(pattern, value) {
+  if (!value) {
+    return '';
+  }
+
   const cleanValue = String(value).replace(/[^\da-zA-Z\n|]/g, '');
   const blockSizes = pattern
     .split(/[^\da-zA-Z\n|]/g)
