@@ -17,7 +17,9 @@ function formatStringByPattern(pattern, value) {
         const curBlockSize = blockSizes[index];
         const beforeSlice = acc.value.slice(0, curBlockSize);
         const afterSlice = acc.value.slice(curBlockSize);
-        const nextResult = acc.result.concat(cur, beforeSlice);
+        const nextResult = beforeSlice
+          ? acc.result.concat(cur, beforeSlice)
+          : acc.result;
 
         return {
           result: nextResult,
@@ -30,17 +32,7 @@ function formatStringByPattern(pattern, value) {
       }
     );
 
-    const result = afterReduce.result.slice(0, pattern.length);
-    const [last] = result.slice(-1);
-
-    // If the last character is a separator,
-    // the value is partial, so we remove the character.
-    // Useful for inputs.
-    if (last.match(/[^\da-zA-Z\n|]/g)) {
-      return result.slice(0, -1);
-    }
-
-    return result;
+    return afterReduce.result.slice(0, pattern.length);
   }
 
   const afterReduce = blockSizes.reduce(
