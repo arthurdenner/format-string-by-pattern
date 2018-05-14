@@ -31,6 +31,8 @@ someFormat(1234);
 
 > NOTE: The returned value will be sliced to the size of the pattern.
 
+This library is pretty useful with forms, where you need to parse the input values. See the usage with the [react-final-form](https://github.com/final-form/react-final-form) library [here](https://codesandbox.io/s/no20p7z3l).
+
 ## API
 
 ### formatStringByPattern(pattern, valueToFormat)
