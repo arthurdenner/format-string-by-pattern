@@ -2,15 +2,15 @@
 
 ## Overview
 
-This module consists on a function that takes a pattern and a value and then returns this value formatted according to the pattern. It probably won't work with every pattern tho.
+This module consists on a function that receives a pattern and a value and returns this value formatted according to the pattern.
 
 ## Why?
 
-I was writing one specific function to each formatted value I had to obtain from an input and that sucks, so I decided to try write a function to format any value based on any pattern. This is my attempt. 😃
+I had to write a specific function to format every value I needed and that sucks, so I decided to try write a function to format any value based on any pattern. This is my attempt. 😃
 
 ## Other solutions
 
-There is probably other solutions to these problems. If you know any other solution, feel free to open a PR adding it to the README.md.
+I don't know any other solutions to this problem. If you do, feel free to open a PR adding it to the README.md.
 
 ## Usage
 
@@ -31,7 +31,8 @@ someFormat(1234);
 
 > NOTE: The returned value will be sliced to the size of the pattern.
 
-This library is pretty useful with forms, where you need to parse the input values. See the usage with the [react-final-form](https://github.com/final-form/react-final-form) library [here](https://codesandbox.io/s/no20p7z3l).
+This library is pretty useful with forms, where you need to parse the input values.
+See the usage with the [react-final-form](https://github.com/final-form/react-final-form) library [here](https://codesandbox.io/s/no20p7z3l).
 
 ## API
 
