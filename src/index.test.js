@@ -106,16 +106,21 @@ test('It should work with curried value', t => {
   t.is(result, '763.162.042-30');
 });
 
-test('It should return an empty string if no value is provided', t => {
+test("It should return the same value if it's an invalid value, an empty string or zero", t => {
   const formatToCPF = formatStringByPattern('(999) 999-9999');
-  const result = formatToCPF();
+  const undefinedValue = formatToCPF();
 
-  t.is(result, '');
-});
+  t.is(undefinedValue, undefined);
 
-test('It should return an empty string if the value is empty', t => {
-  const formatToCPF = formatStringByPattern('(999) 999-9999');
-  const result = formatToCPF('');
+  const nullValue = formatToCPF(null);
 
-  t.is(result, '');
+  t.is(nullValue, null);
+
+  const emptyString = formatToCPF('');
+
+  t.is(emptyString, '');
+
+  const zeroValue = formatToCPF(0);
+
+  t.is(zeroValue, 0);
 });

@@ -1,6 +1,6 @@
 function formatStringByPattern(pattern, value) {
   if (!value) {
-    return '';
+    return value;
   }
 
   const cleanValue = String(value).replace(/[^\da-zA-Z\n|]/g, '');
