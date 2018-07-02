@@ -11,15 +11,23 @@
 
 ## Overview
 
-This module consists on a function that receives a pattern and a value and returns this value formatted according to the pattern.
+This module consists on a function that receives a pattern and a value and returns this value formatted according to the pattern. It doesn't work with every pattern, but it works with a lot of use cases.
 
-## Why?
+## Install
 
-I had to write a specific function to format every value I needed and that sucks, so I decided to try write a function to format any value based on any pattern. This is my attempt. 😃
+```
+yarn add format-string-by-pattern
+```
 
-## Other solutions
+```
+npm i format-string-by-pattern
+```
 
-I don't know any other solutions to this problem. If you do, feel free to open a PR adding it to the README.md.
+### UMD
+
+```
+<script src="https://unpkg.com/format-string-by-pattern/dist/format-string-by-pattern.umd.js"></script>
+```
 
 ## Usage
 
