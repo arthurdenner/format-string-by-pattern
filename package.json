@@ -1,6 +1,6 @@
 {
   "name": "format-string-by-pattern",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A module that formats a string based on a pattern",
   "main": "dist/format-string-by-pattern.js",
   "umd:main": "dist/format-string-by-pattern.umd.js",
