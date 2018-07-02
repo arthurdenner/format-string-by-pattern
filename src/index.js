@@ -12,12 +12,17 @@ function formatStringByPattern(pattern, value) {
   const [firstSeparator] = separators;
 
   if (pattern.startsWith(firstSeparator)) {
+    let curBlockSize;
+    let beforeSlice;
+    let afterSlice;
+    let nextResult;
+
     const afterReduce = separators.reduce(
       (acc, cur, index) => {
-        const curBlockSize = blockSizes[index];
-        const beforeSlice = acc.value.slice(0, curBlockSize);
-        const afterSlice = acc.value.slice(curBlockSize);
-        const nextResult = beforeSlice
+        curBlockSize = blockSizes[index];
+        beforeSlice = acc.value.slice(0, curBlockSize);
+        afterSlice = acc.value.slice(curBlockSize);
+        nextResult = beforeSlice
           ? acc.result.concat(cur, beforeSlice)
           : acc.result;
 
@@ -35,13 +40,19 @@ function formatStringByPattern(pattern, value) {
     return afterReduce.result.slice(0, pattern.length);
   }
 
+  let curSeparator;
+  let replace;
+  let curSlice;
+  let curRegex;
+  let curValue;
+
   const afterReduce = blockSizes.reduce(
     (acc, cur, index) => {
-      const curSeparator = separators[index] || '';
-      const replace = `$1${curSeparator}$2`;
-      const curSlice = cur + acc.prevSlice + acc.prevSeparator.length;
-      const curRegex = new RegExp(`(.{${curSlice}})(.)`);
-      const curValue = acc.value.replace(curRegex, replace);
+      curSeparator = separators[index] || '';
+      replace = `$1${curSeparator}$2`;
+      curSlice = cur + acc.prevSlice + acc.prevSeparator.length;
+      curRegex = new RegExp(`(.{${curSlice}})(.)`);
+      curValue = acc.value.replace(curRegex, replace);
 
       return {
         prevSeparator: curSeparator,
