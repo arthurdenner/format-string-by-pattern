@@ -11,7 +11,7 @@
 
 ## Overview
 
-This module consists on a function that receives a pattern and a value and returns this value formatted according to the pattern. It doesn't work with every pattern, but it works with a lot of use cases.
+This module consists on a function that receives a pattern and a value and returns this value formatted according to the pattern. It doesn't work with every pattern, but it works with a lot of use cases, especially if you build functions on top of this module.
 
 ## Install
 
@@ -39,6 +39,14 @@ formatStringByPattern('YYYY-MM-DD', '20180508');
 
 formatStringByPattern('2018-05-08', '20151217');
 // '2015-12-17'
+
+const formatOnlyNumbers = anyString => {
+  const onlyNumbers = anyString.replace(/[^\d]/g, '');
+
+  return formatStringByPattern('999-999-9999', onlyNumbers);
+};
+formatOnlyNumbers('1A2B3C4D5E6F7G8H9');
+// '123-456-789'
 
 // It works with curry too
 const someFormat = formatStringByPattern('00.00');

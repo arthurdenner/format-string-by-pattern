@@ -124,3 +124,15 @@ test("It should return the same value if it's an invalid value, an empty string 
 
   t.is(zeroValue, 0);
 });
+
+test('It should work if used to build specific functions', t => {
+  const formatOnlyNumbers = anyString => {
+    const onlyNumbers = anyString.replace(/[^\d]/g, '');
+
+    return formatStringByPattern('999-999-9999', onlyNumbers);
+  };
+
+  const result = formatOnlyNumbers('1A2B3C4D5E6F7G8H9');
+
+  t.is(result, '123-456-789');
+});
