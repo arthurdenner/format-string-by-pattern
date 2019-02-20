@@ -13,11 +13,12 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist docs",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc src",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run typedoc",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
+    "typedoc": "typedoc src",
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
