@@ -1,4 +1,4 @@
-function formatStringByPattern(pattern, value) {
+function getFormattedString(pattern: string, value?: string | number) {
   if (!value) {
     return value;
   }
@@ -17,9 +17,7 @@ function formatStringByPattern(pattern, value) {
         const curBlockSize = blockSizes[index];
         const beforeSlice = acc.value.slice(0, curBlockSize);
         const afterSlice = acc.value.slice(curBlockSize);
-        const nextResult = beforeSlice
-          ? acc.result.concat(cur, beforeSlice)
-          : acc.result;
+        const nextResult = beforeSlice ? acc.result.concat(cur, beforeSlice) : acc.result;
 
         return {
           result: nextResult,
@@ -59,7 +57,12 @@ function formatStringByPattern(pattern, value) {
   return afterReduce.value.slice(0, pattern.length);
 }
 
-module.exports = (pattern, value) =>
-  value
-    ? formatStringByPattern(pattern, value)
-    : curriedValue => formatStringByPattern(pattern, curriedValue);
+function formatStringByPattern(pattern: string): (value?: string | number) => string;
+function formatStringByPattern(pattern: string, value: string | number): string;
+function formatStringByPattern(pattern: string, value?: string | number) {
+  return value === undefined
+    ? (curriedValue: string | number) => getFormattedString(pattern, curriedValue)
+    : getFormattedString(pattern, value);
+}
+
+export default formatStringByPattern;
