@@ -1,6 +1,6 @@
 {
   "name": "format-string-by-pattern",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "A module that formats a string based on a pattern",
   "main": "dist/format-string-by-pattern.umd.js",
   "module": "dist/format-string-by-pattern.es5.js",
@@ -83,7 +83,7 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript2": "^0.18.0",
-    "semantic-release": "^15.9.16",
+    "semantic-release": "^15.13.3",
     "shelljs": "^0.8.3",
     "travis-deploy-once": "^5.0.9",
     "ts-jest": "^23.10.2",
