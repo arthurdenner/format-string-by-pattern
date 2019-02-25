@@ -1,22 +1,30 @@
 {
   "name": "format-string-by-pattern",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "A module that formats a string based on a pattern",
-  "main": "dist/format-string-by-pattern.js",
-  "umd:main": "dist/format-string-by-pattern.umd.js",
-  "module": "dist/format-string-by-pattern.m.js",
-  "source": "src/format-string-by-pattern.js",
+  "main": "dist/format-string-by-pattern.umd.js",
+  "module": "dist/format-string-by-pattern.es5.js",
+  "typings": "dist/types/format-string-by-pattern.d.ts",
   "author": {
     "name": "Arthur Denner",
     "email": "arthurdenner7@gmail.com"
   },
   "license": "MIT",
   "scripts": {
-    "build": "npm run test && microbundle -o dist -i src",
-    "prepublishOnly": "git push && git push --tags",
-    "preversion": "npm run build",
-    "test": "xo && nyc ava",
-    "test:watch": "npm test -- --watch"
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist docs",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run typedoc",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "typedoc": "typedoc src",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+    "precommit": "lint-staged",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "files": [
     "dist"
@@ -26,16 +34,6 @@
     "string",
     "pattern"
   ],
-  "xo": {
-    "prettier": true,
-    "space": true
-  },
-  "devDependencies": {
-    "ava": "1.0.0-beta.4",
-    "microbundle": "^0.4.4",
-    "nyc": "^11.7.1",
-    "xo": "^0.21.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/arthurdenner/format-string-by-pattern.git"
@@ -43,5 +41,53 @@
   "bugs": {
     "url": "https://github.com/arthurdenner/format-string-by-pattern/issues"
   },
-  "homepage": "https://github.com/arthurdenner/format-string-by-pattern#readme"
+  "homepage": "https://github.com/arthurdenner/format-string-by-pattern#readme",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.0",
+    "codecov.io": "^0.1.6",
+    "commitizen": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.0.1",
+    "jest": "^23.6.0",
+    "jest-config": "^23.6.0",
+    "lint-staged": "^8.0.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.67.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-typescript2": "^0.18.0",
+    "semantic-release": "^15.13.3",
+    "travis-deploy-once": "^5.0.9",
+    "ts-jest": "^23.10.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.12.0",
+    "typescript": "^3.0.3"
+  }
 }
