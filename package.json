@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/arthurdenner/format-string-by-pattern#readme",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=10"
   },
   "husky": {
     "hooks": {
