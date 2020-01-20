@@ -69,7 +69,7 @@
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@types/jest": "24.9.0",
-    "@types/node": "13.1.7",
+    "@types/node": "13.1.8",
     "codecov": "3.6.1",
     "commitizen": "4.0.3",
     "cross-env": "6.0.3",
