@@ -13,5 +13,13 @@ export default {
   watch: {
     include: 'src/**',
   },
-  plugins: [typescript({ useTsconfigDeclarationDir: true }), sourceMaps(), terser()],
+  plugins: [
+    typescript({
+      clean: true,
+      objectHashIgnoreUnknownHack: true,
+      useTsconfigDeclarationDir: true,
+    }),
+    sourceMaps(),
+    terser(),
+  ],
 };
