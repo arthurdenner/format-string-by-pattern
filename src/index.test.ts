@@ -131,3 +131,17 @@ it('It should work if used to build specific functions', () => {
 
   expect(result).toEqual('123-456-789');
 });
+
+describe('when the last character in pattern is a separator', () => {
+  it('should format properly if pattern begins with a separator', () => {
+    const result = formatStringByPattern('(999)', 123);
+
+    expect(result).toEqual('(123)');
+  });
+
+  it("should format properly if pattern doesn't begin with a separator", () => {
+    const result = formatStringByPattern('999)', 123);
+
+    expect(result).toEqual('123)');
+  });
+});

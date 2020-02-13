@@ -1,3 +1,7 @@
+function shouldAppendLastSeparator(current: string, pattern: string, lastSeparator: string) {
+  return current.length + 1 === pattern.length && pattern.endsWith(lastSeparator);
+}
+
 function getFormattedString(pattern: string, value?: string | number) {
   if (!value) {
     return value;
@@ -10,6 +14,7 @@ function getFormattedString(pattern: string, value?: string | number) {
     .map(b => b.length);
   const separators = pattern.split(/[\da-zA-Z\n|]/g).filter(Boolean);
   const [firstSeparator] = separators;
+  const lastSeparator = separators[separators.length - 1];
 
   if (pattern.startsWith(firstSeparator)) {
     const afterReduce = separators.reduce(
@@ -30,7 +35,13 @@ function getFormattedString(pattern: string, value?: string | number) {
       }
     );
 
-    return afterReduce.result.slice(0, pattern.length);
+    const res = afterReduce.result.slice(0, pattern.length);
+
+    if (shouldAppendLastSeparator(res, pattern, lastSeparator)) {
+      return res.concat(lastSeparator);
+    }
+
+    return res;
   }
 
   const afterReduce = blockSizes.reduce(
@@ -54,7 +65,13 @@ function getFormattedString(pattern: string, value?: string | number) {
     }
   );
 
-  return afterReduce.value.slice(0, pattern.length);
+  const res = afterReduce.value.slice(0, pattern.length);
+
+  if (shouldAppendLastSeparator(res, pattern, lastSeparator)) {
+    return res.concat(lastSeparator);
+  }
+
+  return res;
 }
 
 function formatStringByPattern(pattern: string): (value?: string | number) => string;
