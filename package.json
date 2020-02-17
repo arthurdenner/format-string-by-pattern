@@ -21,6 +21,7 @@
     "typedoc": "typedoc src",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "commit": "git-cz",
+    "validate": "npm run test:prod && npm run build",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "travis-deploy-once": "travis-deploy-once"
