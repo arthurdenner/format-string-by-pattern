@@ -15,8 +15,6 @@ export default {
   },
   plugins: [
     typescript({
-      clean: true,
-      objectHashIgnoreUnknownHack: true,
       useTsconfigDeclarationDir: true,
     }),
     sourceMaps(),
