@@ -72,7 +72,7 @@
     "husky": "4.2.3",
     "jest": "24.9.0",
     "jest-config": "25.1.0",
-    "lint-staged": "10.0.8",
+    "lint-staged": "10.0.10",
     "prettier": "2.0.2",
     "rimraf": "3.0.2",
     "rollup": "2.1.0",
