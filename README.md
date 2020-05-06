@@ -3,7 +3,9 @@
 </h1>
 
 <p align="center">
+<a href="https://www.npmjs.org/package/format-string-by-pattern"><img src="https://img.shields.io/npm/dw/format-string-by-pattern?style=flat" alt="npm"></a>
 <a href="https://www.npmjs.org/package/format-string-by-pattern"><img src="https://img.shields.io/npm/v/format-string-by-pattern.svg?style=flat" alt="npm"></a>
+<a href="https://codecov.io/gh/arthurdenner/format-string-by-pattern"><img src="https://img.shields.io/codecov/c/github/arthurdenner/format-string-by-pattern" alt="codecov" /></a>
 <a href="https://david-dm.org/arthurdenner/format-string-by-pattern"><img src="https://david-dm.org/arthurdenner/format-string-by-pattern/status.svg" alt="dependencies Status"></a>
 <a href="https://unpkg.com/format-string-by-pattern/dist/format-string-by-pattern.umd.js"><img src="https://img.badgesize.io/https://unpkg.com/format-string-by-pattern/dist/format-string-by-pattern.umd.js?compression=gzip" alt="gzip size"></a>
 <a href="https://packagephobia.now.sh/result?p=format-string-by-pattern"><img src="https://packagephobia.now.sh/badge?p=format-string-by-pattern" alt="install size"></a>
@@ -40,7 +42,7 @@ formatStringByPattern('YYYY-MM-DD', '20180508');
 formatStringByPattern('2018-05-08', '20151217');
 // '2015-12-17'
 
-const formatOnlyNumbers = anyString => {
+const formatOnlyNumbers = (anyString) => {
   const onlyNumbers = anyString.replace(/[^\d]/g, '');
 
   return formatStringByPattern('999-999-9999', onlyNumbers);
