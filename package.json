@@ -75,7 +75,7 @@
     "lint-staged": "10.2.9",
     "prettier": "2.0.5",
     "rimraf": "3.0.2",
-    "rollup": "2.14.0",
+    "rollup": "2.15.0",
     "rollup-plugin-sourcemaps": "0.6.2",
     "rollup-plugin-terser": "6.1.0",
     "rollup-plugin-typescript2": "0.27.1",
