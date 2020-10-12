@@ -71,7 +71,7 @@
     "cz-conventional-changelog": "3.3.0",
     "husky": "4.3.0",
     "jest": "25.5.4",
-    "jest-config": "26.4.2",
+    "jest-config": "26.5.3",
     "lint-staged": "10.3.0",
     "prettier": "2.1.2",
     "rimraf": "3.0.2",
