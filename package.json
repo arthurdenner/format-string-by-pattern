@@ -18,7 +18,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test",
-    "typedoc": "typedoc src",
+    "typedoc": "typedoc src/index.ts",
     "validate": "npm run test:prod && npm run build"
   },
   "files": [
