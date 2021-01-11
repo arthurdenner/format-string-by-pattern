@@ -18,7 +18,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test",
-    "typedoc": "typedoc src",
+    "typedoc": "typedoc src/index.ts",
     "validate": "npm run test:prod && npm run build"
   },
   "files": [
@@ -84,7 +84,7 @@
     "tslint": "6.1.3",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "9.0.0",
-    "typedoc": "0.19.2",
+    "typedoc": "0.20.14",
     "typescript": "3.9.7"
   }
 }

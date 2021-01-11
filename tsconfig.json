@@ -16,9 +16,7 @@
   },
   "typedocOptions": {
     "out": "docs",
-    "target": "es6",
-    "theme": "minimal",
-    "mode": "file"
+    "theme": "minimal"
   },
   "include": ["src/index.ts"]
 }
