@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/arthurdenner/format-string-by-pattern#readme",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "husky": {
     "hooks": {
