@@ -15,8 +15,7 @@
     "typeRoots": ["node_modules/@types"]
   },
   "typedocOptions": {
-    "out": "docs",
-    "theme": "minimal"
+    "out": "docs"
   },
   "include": ["src/index.ts"]
 }
