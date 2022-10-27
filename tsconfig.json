@@ -17,5 +17,5 @@
   "typedocOptions": {
     "out": "docs"
   },
-  "include": ["src/index.ts"]
+  "include": ["src/index.ts", "rollup.config.ts"]
 }
